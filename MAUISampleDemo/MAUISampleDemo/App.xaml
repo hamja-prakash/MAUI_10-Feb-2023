@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="MAUISampleDemo.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MAUISampleDemo">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ResourceDictionary>
+                <Color x:Key="LightBackground">#FAF9F8</Color>
+                <Color x:Key="DarkBackground">Black</Color>
+
+                <Style ApplyToDerivedTypes="True" TargetType="Page">
+                    <Setter Property="BackgroundColor" Value="{StaticResource LightBackground}" />
+                </Style>
+
+                <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
+                    <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                    <Setter Property="BarTextColor" Value="White" />
+                </Style>
+
+                <Style x:Key="BaseLabel" TargetType="Label">
+                    <Setter Property="FontFamily" Value="OpenSansRegular" />
+                    <Setter Property="TextColor" Value="#1F1F1F" />
+                </Style>
+            </ResourceDictionary>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
